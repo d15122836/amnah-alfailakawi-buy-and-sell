@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.SellFragment">
+
+
+    <!--    firstLy-->
+    <LinearLayout
+        android:id="@+id/firstLy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/mobileSell_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5">
+
+            <ImageView
+                android:id="@+id/mblIv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:padding="10dp"
+                android:src="@drawable/ic_smartphone" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/mblIv"
+                android:layout_centerHorizontal="true"
+                android:text="Mobile" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/houseSell_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5">
+
+            <ImageView
+                android:id="@+id/housIv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:padding="10dp"
+                android:src="@drawable/ic_home" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/housIv"
+                android:layout_centerHorizontal="true"
+                android:text="House" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <!--    secondLy-->
+    <LinearLayout
+        android:id="@+id/secondLy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/firstLy"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/bikeSell_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5">
+
+            <ImageView
+                android:id="@+id/bikeIv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:padding="10dp"
+                android:src="@drawable/ic_bike" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bikeIv"
+                android:layout_centerHorizontal="true"
+                android:text="Bike" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/electronicsSell_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5">
+
+            <ImageView
+                android:id="@+id/electronicsIv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:padding="10dp"
+                android:src="@drawable/ic_electronics" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/electronicsIv"
+                android:layout_centerHorizontal="true"
+                android:text="Electronics" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <!--    thirdLy-->
+    <LinearLayout
+        android:id="@+id/thirdLy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/secondLy"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/carSell_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5">
+
+            <ImageView
+                android:id="@+id/carIv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:padding="10dp"
+                android:src="@drawable/ic_car" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/carIv"
+                android:layout_centerHorizontal="true"
+                android:text="Vehicles" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/appartmentsSell_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5">
+
+            <ImageView
+                android:id="@+id/appartmentsIv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:padding="10dp"
+                android:src="@drawable/ic_appartment" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/appartmentsIv"
+                android:layout_centerHorizontal="true"
+                android:text="Appartment" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

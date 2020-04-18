@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activites.RegistrationActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <RelativeLayout
+                android:id="@+id/loginLy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+               >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/createAccount_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginBottom="50dp"
+                    android:padding="10dp"
+                    android:text="Profile Settings"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/createAccount_id"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/update_account"
+                    android:textSize="18sp"
+                    android:gravity="center"/>
+
+
+            </RelativeLayout>
+
+            <!--    fields Ly-->
+
+            <RelativeLayout
+                android:id="@+id/createAccountLy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/loginLy"
+                android:padding="20dp">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/userName_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/bg_textview"
+                    android:hint="User Name"
+                    android:maxLines="1" />
+
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/mobile_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/userName_id"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/bg_textview"
+                    android:hint="Mobile Number"
+                    android:inputType="phone"
+                    android:maxLines="1"/>
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/address_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/mobile_id"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/bg_textview"
+                    android:hint="Enter Your Address"
+                    android:maxLines="3" />
+
+
+
+
+            </RelativeLayout>
+
+            <!--    create Account Btn Ly-->
+
+            <RelativeLayout
+                android:id="@+id/btn_create_account_ly"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/createAccountLy">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/updateAccountBtn_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginEnd="30dp"
+                    android:background="@drawable/bg_button"
+                    android:text="Update Account"
+                    android:textColor="@android:color/white" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/cancelBtn_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/bg_button"
+                    android:layout_below="@+id/updateAccountBtn_id"
+                    android:text="Cancel Update"
+                    android:textColor="@android:color/white" />
+
+            </RelativeLayout>
+
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

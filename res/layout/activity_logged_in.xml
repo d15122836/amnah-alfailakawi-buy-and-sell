@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activites.LoggedInActivity">
+
+    <FrameLayout
+        android:id="@+id/fragment_mainn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+
+
+
+    <com.irfaan008.irbottomnavigation.SpaceNavigationView
+        android:id="@+id/space"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:active_item_color="@android:color/holo_blue_dark"
+        app:centre_button_color="@color/blue_btn"
+        app:inactive_item_color="@android:color/black"
+        app:space_background_color="#AAAAAA"
+        app:centre_button_icon="@drawable/ic_shopping_cart_upload"
+        app:active_centre_button_background_color="@android:color/black"
+        app:space_item_icon_size="@dimen/space_item_icon_default_size"
+        app:space_item_icon_only_size="@dimen/space_item_icon_only_size"
+        app:space_item_text_size="@dimen/space_item_text_default_size"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

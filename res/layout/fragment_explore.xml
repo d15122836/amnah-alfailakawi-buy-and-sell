@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.ExploreFragment">
+
+
+
+<!--    textView-->
+   <RelativeLayout
+       android:id="@+id/catLy"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:padding="10dp">
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="Browse Categories"
+           android:textSize="20sp"
+           android:textStyle="bold"/>
+
+   </RelativeLayout>
+
+<!--    Categories-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/catLy"
+       android:padding="5dp">
+
+        <LinearLayout
+            android:id="@+id/firstLinearLy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="2dp">
+
+
+            <RelativeLayout
+                android:id="@+id/mobileCat_id"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5">
+                <ImageView
+                    android:id="@+id/mblIv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_smartphone"
+                    android:background="#28DA1C1C"
+                    android:layout_centerInParent="true"
+                    android:padding="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mobile"
+                    android:layout_marginTop="18dp"
+                    android:layout_below="@id/mblIv"
+                    android:layout_centerHorizontal="true"
+                    />
+            </RelativeLayout>
+
+<!--            carLy-->
+            <RelativeLayout
+                android:id="@+id/carCat_id"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5">
+                <ImageView
+                    android:id="@+id/carIv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_car"
+                    android:background="#2EAA1C1C"
+                    android:layout_centerInParent="true"
+                    android:padding="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vehicles"
+                    android:layout_marginTop="18dp"
+                    android:layout_below="@id/carIv"
+                    android:layout_centerHorizontal="true"
+                    />
+            </RelativeLayout>
+
+<!--            shopRent-->
+            <RelativeLayout
+                android:id="@+id/saleCat_id"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5">
+                <ImageView
+                    android:id="@+id/shopIv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_home"
+                    android:background="#2EFF5722"
+                    android:layout_centerInParent="true"
+                    android:padding="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="House Sale"
+                    android:layout_marginTop="18dp"
+                    android:layout_below="@id/shopIv"
+                    android:layout_centerHorizontal="true"
+                    />
+            </RelativeLayout>
+
+<!--            electronicsLy-->
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/thirddLinearLy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/secondLinearLy"
+            android:layout_marginTop="10dp">
+
+
+
+            <RelativeLayout
+                android:id="@+id/property_all_add"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5">
+                <ImageView
+                    android:id="@+id/prop_all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_add_shopping_cart_black_24dp"
+                    android:background="#5C14ED43"
+                    android:layout_centerInParent="true"
+                    android:padding="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="All Products"
+                    android:layout_marginTop="18dp"
+                    android:layout_below="@id/prop_all"
+                    android:layout_centerHorizontal="true"
+                    />
+            </RelativeLayout>
+
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/secondLinearLy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/firstLinearLy"
+            android:layout_marginTop="10dp">
+
+            <RelativeLayout
+                android:id="@+id/electronicCat_id"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5">
+                <ImageView
+                    android:id="@+id/elecIv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_electronics"
+                    android:background="#2ED63B02"
+                    android:layout_centerInParent="true"
+                    android:padding="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Electronics"
+                    android:layout_marginTop="18dp"
+                    android:layout_below="@id/elecIv"
+                    android:layout_centerHorizontal="true"
+                    />
+            </RelativeLayout>
+            <!--            bikeLy-->
+            <RelativeLayout
+                android:id="@+id/bikeCat_id"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5">
+                <ImageView
+                    android:id="@+id/bikeIv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_bike"
+                    android:background="#2E4F2795"
+                    android:layout_centerInParent="true"
+                    android:padding="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bike"
+                    android:layout_marginTop="18dp"
+                    android:layout_below="@id/bikeIv"
+                    android:layout_centerHorizontal="true"
+                    />
+            </RelativeLayout>
+
+            <!--            propertyLy-->
+            <RelativeLayout
+                android:id="@+id/propertyCat_id"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5">
+                <ImageView
+                    android:id="@+id/propIv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_appartment"
+                    android:background="#2ECDDC39"
+                    android:layout_centerInParent="true"
+                    android:padding="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Appartments"
+                    android:layout_marginTop="18dp"
+                    android:layout_below="@id/propIv"
+                    android:layout_centerHorizontal="true"
+                    />
+            </RelativeLayout>
+
+
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

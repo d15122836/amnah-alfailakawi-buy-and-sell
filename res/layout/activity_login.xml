@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activites.RegistrationActivity">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <!--    logo Ly-->
+
+            <RelativeLayout
+                android:id="@+id/logoLy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/logo_new" />
+
+            </RelativeLayout>
+
+            <!--    textview lY-->
+
+            <RelativeLayout
+                android:id="@+id/loginLy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/logoLy">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginBottom="50dp"
+                    android:padding="10dp"
+                    android:text="Log In"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/login"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center"
+                    android:text="@string/login_info"
+                    android:textSize="18sp" />
+
+
+            </RelativeLayout>
+
+            <!--    fields Ly-->
+
+            <RelativeLayout
+                android:id="@+id/createAccountLy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/loginLy"
+                android:padding="20dp">
+
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/email_login_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/bg_textview"
+                    android:hint="@string/enter_your_email" />
+
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/password_login_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/email_login_id"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/bg_textview"
+                    android:hint="@string/type_password" />
+
+            </RelativeLayout>
+
+            <!--    create Account Btn Ly-->
+
+            <RelativeLayout
+                android:id="@+id/btn_create_account_ly"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/createAccountLy">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/loginActivityBtn_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="30dp"
+                    android:background="@drawable/bg_button"
+                    android:text="@string/log_in"
+                    android:textColor="@android:color/white" />
+
+            </RelativeLayout>
+
+            <!--        already have account Ly-->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn_create_account_ly">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/loginBtn_id"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/already_account_login"
+                    android:text="@string/create_new"
+                    android:textColor="@android:color/holo_blue_dark" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/already_account_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:padding="10dp"
+                    android:text="@string/dont_have_an_account" />
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.SellDetailFragment">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".fragments.SellDetailFragment">
+
+
+    <!--    spinnerLy-->
+    <RelativeLayout
+        android:id="@+id/spinnerLy"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:padding="10dp">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/recyclerViewPhotos"/>
+
+    </RelativeLayout>
+
+    <!--    ImagesBtnLy-->
+    <RelativeLayout
+        android:id="@+id/uploadLy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spinnerLy"
+        android:padding="10dp"
+        android:layout_marginTop="30dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/uploadImages_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/bg_button"
+            android:padding="10dp"
+            android:text="Upload Images"
+            android:textColor="@android:color/white" />
+
+    </RelativeLayout>
+
+    <!--    detailsLy-->
+    <RelativeLayout
+        android:id="@+id/detailsLy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/uploadLy"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--            title-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Title :"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/titleEtv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_textview"
+                android:hint="title of product"
+                android:maxLines="1"/>
+
+            <!--            price Demand-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:text="Price Demanded :"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/priceEtv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_textview"
+                android:hint="Price for Product"
+                android:maxLines="1"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:text="Choose Currency :"
+                android:textSize="15sp" />
+
+            <Spinner
+                android:id="@+id/spinnerCuren"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+
+                android:background="@drawable/bg_textview"/>
+
+            <!--            discription-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:text="Short Description :"
+                android:textSize="15sp" />
+            <EditText
+                android:id="@+id/shortDescEtv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_textview"
+                android:hint="Description for Product"
+                android:maxLines="2"/>
+
+
+
+
+
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <!--    PostAdBtnLy-->
+    <RelativeLayout
+        android:id="@+id/uploadToFirebase_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detailsLy"
+        android:paddingTop="20dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/postAdBtn_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/bg_button"
+            android:text="Post Ad"
+            android:textColor="@android:color/white" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/postDonateBtn_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/postAdBtn_id"
+            android:background="@drawable/bg_button"
+            android:text="Post Donation"
+            android:textColor="@android:color/white" />
+    </RelativeLayout>
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+android:visibility="gone"
+        android:id="@+id/progressbar_uploading"/>
+</RelativeLayout>
+</ScrollView>

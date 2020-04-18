@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.activites.ExploreDetail_DetailAdd">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:layout_marginBottom="65dp">
+    <RelativeLayout
+        android:id="@+id/r1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="65dp"
+        >
+    <androidx.viewpager.widget.ViewPager
+
+        android:id="@+id/view_pager"
+        android:background="@android:color/black"
+        android:layout_width="match_parent"
+        android:layout_height="500dp" />
+
+
+    <com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator
+        android:id="@+id/dots_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:dampingRatio="0.5"
+        android:layout_margin="9dp"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/tv_title"
+        app:dotsColor="@color/selected"
+        app:dotsStrokeColor="@color/white"
+        app:dotsCornerRadius="2dp"
+        app:dotsSize="16dp"
+        app:dotsSpacing="6dp"
+        app:dotsStrokeWidth="2dp"
+        app:stiffness="200"
+        />
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view_pager"
+        android:layout_margin="8dp"
+        android:text="title"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_title"
+        android:layout_margin="8dp"
+        android:text="title"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_des"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_price"
+        android:layout_margin="8dp"
+        android:text="title"
+        android:textSize="20sp" />
+        <TextView
+            android:id="@+id/tv_avail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_des"
+            android:layout_margin="8dp"
+            android:text="avail"
+            android:textSize="20sp" />
+    </RelativeLayout>
+    </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:weightSum="3">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/button_call"
+            android:layout_weight="1"
+            android:background="@color/blue_btn"
+            android:text="CALL"
+            android:layout_margin="1dp"
+            android:textColor="#ffffff"
+            android:paddingLeft="10dp"
+            android:drawableLeft="@drawable/ic_call"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/button_sms"
+            android:background="@color/blue_btn"
+            android:text="SMS"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:textColor="#ffffff"
+            android:paddingLeft="10dp"
+            android:drawableLeft="@drawable/ic_message"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/button_chat"
+            android:layout_margin="1dp"
+            android:background="@color/blue_btn"
+            android:text="BID"
+            android:layout_weight="1"
+            android:textColor="#ffffff"
+            android:paddingLeft="10dp"
+            android:drawableLeft="@drawable/ic_chat"/>
+
+
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.sellanddonate.app">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
+    <application
+        android:name=".Application"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity
+            android:name=".ui.activites.History_Seller"
+            android:label="@string/title_activity_history__seller"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".ui.myaddtab.Tab_MainActivity"
+            android:label="@string/title_activity_tab__main"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ui.activites.ExploreDetail_DetailAdd" />
+        <activity
+            android:name=".ui.activites.Seller_id_detailActivity"
+            android:label="All Bids on the product" />
+        <activity android:name=".fragments.ProfileSettingFragment" />
+        <activity android:name=".fragments.HelpCenterFragment" />
+        <activity android:name=".ui.activites.UploadAdsClass" />
+        <activity android:name=".fragments.FragmentHandlerActivity" />
+        <activity android:name=".fragments.UserProfile" />
+        <activity
+            android:name=".ui.screen.SplashScreenActivity"
+            android:theme="@style/AppTheme_splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.activites.LoggedInActivity" />
+        <activity android:name=".ui.activites.LoginActivity" />
+        <activity android:name=".ui.activites.RegistrationActivity" />
+        <activity android:name=".ui.activites.SellerProfileDetail" />
+    </application>
+
+</manifest>

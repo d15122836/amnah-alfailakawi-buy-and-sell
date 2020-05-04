@@ -36,7 +36,7 @@ SharedPreferences prefs;
 
     @Override
     protected void init(View view) {
-
+        getActivity().setTitle("People Ads Catagory");
         mobileCat_id = (RelativeLayout) findViewById(R.id.mobileCat_id);
         carCat_id = (RelativeLayout) findViewById(R.id.carCat_id);
         saleCat_id = (RelativeLayout) findViewById(R.id.saleCat_id);

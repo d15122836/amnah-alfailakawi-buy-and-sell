@@ -6,6 +6,27 @@ import java.util.ArrayList;
 
 public class BidDetail {
 
+    private String payment;
+    private String productId;
+
+    public String getProductId() {
+        return productId;
+    }
+
+    public void setProductId(String productId) {
+        this.productId = productId;
+    }
+
+
+
+    public String getPayment() {
+        return payment;
+    }
+
+    public void setPayment(String payment) {
+        this.payment = payment;
+    }
+
     @PropertyName("description")
     private String bidAmount;
 

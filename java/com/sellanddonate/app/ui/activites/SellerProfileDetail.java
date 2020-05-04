@@ -81,7 +81,7 @@ public class SellerProfileDetail extends AppCompatActivity {
                 tv_name.setText("Seller Name: " + name);
                 tv_PhoneNumber.setText("Phone Number:" + phoneNumber);
                 tv_address.setText("Address:" + address);
-                tv_email.setText("Phone Number:" + email);
+                tv_email.setText("Email:" + email);
                 tv_member_since.setText("The Seller is selling Products since: \n" + member_since);
 
 

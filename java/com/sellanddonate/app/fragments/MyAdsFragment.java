@@ -49,7 +49,7 @@ public class MyAdsFragment extends BaseFragment implements MyAddsExlporeAdapter.
     @Override
     protected void init(View view) {
         // Toast.makeText(getActivity(),"loaded",Toast.LENGTH_SHORT).show();
-
+        getActivity().setTitle("My Posted Ads");
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override

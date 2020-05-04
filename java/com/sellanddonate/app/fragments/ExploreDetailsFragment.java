@@ -50,6 +50,7 @@ public class ExploreDetailsFragment extends BaseFragment implements ExploreAdapt
 
     @Override
     protected void init(View view) {
+        getActivity().setTitle("Active Ads");
         final String Uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
         list = new ArrayList<>();

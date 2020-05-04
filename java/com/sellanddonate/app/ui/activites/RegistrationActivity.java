@@ -86,7 +86,7 @@ public class RegistrationActivity extends BaseActivity implements View.OnClickLi
 
     private void registerUser() {
 
-        progressBar.setVisibility(View.VISIBLE);
+
 
         final String userName = userNameEtv.getText().toString().trim();
         final String email = emailEtv.getText().toString().trim();
@@ -98,79 +98,80 @@ public class RegistrationActivity extends BaseActivity implements View.OnClickLi
         if (userName.isEmpty()) {
             userNameEtv.setError("User Name Required");
             userNameEtv.requestFocus();
-        }
-        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+        } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             emailEtv.setError("Email Required");
             emailEtv.requestFocus();
         }
-       // if (mobile.length() != 10) {
-       //     mobileEtv.setError("Invalid Phone Number");
+        // if (mobile.length() != 10) {
+        //     mobileEtv.setError("Invalid Phone Number");
         //    mobileEtv.requestFocus();
-      //  }
-        if (address.isEmpty()) {
+        //  }
+        else if (address.isEmpty()) {
             addressEtv.setError("Address Required");
             addressEtv.requestFocus();
         }
-        if (!password.equals(confirm_password)) {
+        else if (!password.equals(confirm_password)) {
             passwordEtv.setError("Password Does Not Match");
             passwordEtv.requestFocus();
         }
-        if (password.isEmpty()) {
+        else if (password.isEmpty()) {
             confirm_passwordEtv.setError("Password Required");
             confirm_passwordEtv.requestFocus();
-        }
+        }else {
+
+            progressBar.setVisibility(View.VISIBLE);
+            mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()) {
+                        // TODO : Reg success Store additional fields
+
+                        User userInfo = new User(
+                                userName,
+                                email,
+                                mobile,
+                                address,
+                                dateFormatted
 
 
-        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()) {
-                    // TODO : Reg success Store additional fields
+                        );
 
-                    User userInfo = new User(
-                            userName,
-                            email,
-                            mobile,
-                            address,
-                            dateFormatted
-
-
-                    );
-
-                    FirebaseDatabase.getInstance().getReference("Users")
-                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                            .setValue(userInfo).addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            if (task.isSuccessful()) {
-                                progressBar.setVisibility(View.INVISIBLE);
-                                ToastUtil.showToast("User Successfully Registered ");
-                                ToastUtil.showErrorLog("error", "User registered successfully");
+                        FirebaseDatabase.getInstance().getReference("Users")
+                                .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                .setValue(userInfo).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()) {
+                                    progressBar.setVisibility(View.INVISIBLE);
+                                    ToastUtil.showToast("User Successfully Registered ");
+                                    ToastUtil.showErrorLog("error", "User registered successfully");
 
 
-                    // Storing data into SharedPreferences
-                                SharedPreferences sharedPreferences
-                                        = getSharedPreferences("username",
-                                        MODE_PRIVATE);
-                                SharedPreferences.Editor myEdit
-                                        = sharedPreferences.edit();
-                                myEdit.putString("name",  userName);
-                                myEdit.apply();
-                                startActivity(new Intent(RegistrationActivity.this, LoggedInActivity.class));
-                            } else {
-                                ToastUtil.showToast("User Registration Failed");
-                                ToastUtil.showErrorLog("error", "User Reg failed : " + task.getException().getMessage());
+                                    // Storing data into SharedPreferences
+                                    SharedPreferences sharedPreferences
+                                            = getSharedPreferences("username",
+                                            MODE_PRIVATE);
+                                    SharedPreferences.Editor myEdit
+                                            = sharedPreferences.edit();
+                                    myEdit.putString("name", userName);
+                                    myEdit.apply();
+                                    startActivity(new Intent(RegistrationActivity.this, LoggedInActivity.class));
+                                } else {
+                                    ToastUtil.showToast("User Registration Failed");
+                                    ToastUtil.showErrorLog("error", "User Reg failed : " + task.getException().getMessage());
 
+                                }
                             }
-                        }
-                    });
+                        });
 
-                } else {
+                    } else {
 
-                    ToastUtil.showErrorLog("error", "error we got is " + task.getException().getMessage());
+                        ToastUtil.showErrorLog("error", "error we got is " + task.getException().getMessage());
+                    }
                 }
-            }
-        });
+            });
+
+        }
     }
 
 

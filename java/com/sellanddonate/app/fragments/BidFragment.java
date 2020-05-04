@@ -41,7 +41,7 @@ public class BidFragment extends BaseFragment {
 
     @Override
     protected void init(View view) {
-
+        getActivity().setTitle("Bids you bidded");
         Uidd = FirebaseAuth.getInstance().getCurrentUser().getUid();
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
@@ -53,8 +53,10 @@ public class BidFragment extends BaseFragment {
                     for (DataSnapshot userDetails : dataSnapshot.getChildren()) {
                         Log.e("myBid", userDetails.getValue() + "  AAA");
 //
-                        BidDetail bidDetail=userDetails.getValue(BidDetail.class);
+                        BidDetail bidDetail = userDetails.getValue(BidDetail.class);
                         BidList.add(bidDetail);
+
+
 //                        if (userDetails.child(Uidd).getValue() != null) {
 //                            catagory_name = userDetails.getKey().toString();
 //                            MyAdds MyAddsDetails = userDetails.child(Uidd).getValue(MyAdds.class);
@@ -80,7 +82,7 @@ public class BidFragment extends BaseFragment {
     private void initalize() {
         recyclerView = (RecyclerView) findViewById(R.id.rvBid_id);
 
-        exploreAdapter = new BidAdapter(getActivity(),BidList);
+        exploreAdapter = new BidAdapter(getActivity(), BidList);
         LinearLayoutManager gridLayoutManager = new LinearLayoutManager(requireContext());
         recyclerView.setLayoutManager(gridLayoutManager);
         recyclerView.setAdapter(exploreAdapter);

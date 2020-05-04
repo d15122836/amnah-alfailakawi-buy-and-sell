@@ -20,6 +20,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.sellanddonate.app.R;
 import com.sellanddonate.app.adapter.SellerIdAdpater;
@@ -133,24 +134,27 @@ public class Seller_id_detailActivity extends AppCompatActivity implements Selle
 
             @Override
             public void onClick(DialogInterface dialog, int which) {
-
+                String productId=productList.get(position).getProductid();
                 int i = Integer.parseInt(productList.get(position).getBidAmount());
                 HashMap<String, Object> hashMap = new HashMap<>();
                 hashMap.put("productName", catagory_name);
                 hashMap.put("price", i);
                 hashMap.put("sold", catagory_name + " sold to " + productList.get(position).getUsername() + " for " + i);
+                hashMap.put("productId",productId);
+                hashMap.put("payment","Unpaid Yet");
 
 
 
-               // mDatabase.child("history").child(Uidd).child(productList.get(position).getProductid()).child("sold").setValue(catagory_name + " sold to " + productList.get(position).getUsername() + " for " + productList.get(position).getBidAmount());
-                mDatabase.child("history").child(Uidd).child(productList.get(position).getProductid()).setValue(hashMap);
+
+                mDatabase.child("history").child(Uidd).child(productList.get(position).getProductid()).child("sold").setValue(catagory_name + " sold to " + productList.get(position).getUsername() + " for " + productList.get(position).getBidAmount());
+                mDatabase.child("history").child(Uidd).child(productId).setValue(hashMap);
                 mDatabase.child("category").child(catagory_name).child(Uidd).removeValue();
                 mDatabase.child("seller").child(Uidd).child(catagory_name).removeValue();
-                mDatabase.child("bidder").child(productList.get(position).getBidderId()).child(productList.get(position).getProductid()).child("status").setValue("accept");
+                mDatabase.child("bidder").child(productList.get(position).getBidderId()).child(productId).child("status").setValue("accept");
+//
+//                Query queryRef = mDatabase.orderByChild("productId").startAt(productId);
+//                Log.e("queryy",queryRef+"");
 
-
-                //String aa =mDatabase.child("bidder").orderByKey().equalTo(productList.get(position).getProductid());
-                // ToastUtil.showToast(aa);
 
             }
         })

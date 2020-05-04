@@ -1,9 +1,11 @@
 package com.sellanddonate.app.ui.activites;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.InputType;
@@ -17,6 +19,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.viewpager.widget.ViewPager;
 
 import com.firebase.client.Firebase;
@@ -47,7 +50,7 @@ public class ExploreDetail_DetailAdd extends AppCompatActivity implements View.O
     String child_str;
     DatabaseReference databaseReference;
     String chatWith;
-    double lat,longt;
+    double lat, longt;
     boolean avail;
 
     @Override
@@ -68,7 +71,7 @@ public class ExploreDetail_DetailAdd extends AppCompatActivity implements View.O
         //list=intent.getParcelableArrayListExtra("list");
         list = intent.getStringArrayListExtra("list");
         unique_id = list.get(0);
-        ToastUtil.showToast(longt+" log " + lat);
+        ToastUtil.showToast(longt + " log " + lat);
 
         SharedPreferences prefs = ExploreDetail_DetailAdd.this.getSharedPreferences("select", Context.MODE_PRIVATE);
         child_str = prefs.getString("selected", "bike");
@@ -191,6 +194,8 @@ public class ExploreDetail_DetailAdd extends AppCompatActivity implements View.O
         updatebidder.put("bidAmount", bid_amount);
         updatebidder.put("lat", lat);
         updatebidder.put("longt", longt);
+        updatebidder.put("payment", "unpaid");
+        updatebidder.put("productId", productId);
 
         Map updateseller = new HashMap();
         updateseller.put("productid", productId);
@@ -207,8 +212,9 @@ public class ExploreDetail_DetailAdd extends AppCompatActivity implements View.O
 
         int finalValue = Integer.parseInt(bid_amount);
         if (finalValue > high_bid) {
-            fanoutObject.put("/category/" + child_str + "/" + sellerId + "/" + "bid" + "/", Integer.parseInt(bid_amount));
-        } else { }
+            fanoutObject.put("/category/" + child_str + "/" + sellerId + "/" + "bid", Integer.parseInt(bid_amount));
+        } else {
+        }
 
         fanoutObject.put("/seller/" + sellerId + "/" + product + "/" + auth + "/", updateseller);
         ref.updateChildren(fanoutObject); // atomic
@@ -248,6 +254,16 @@ public class ExploreDetail_DetailAdd extends AppCompatActivity implements View.O
 
     public void cal(String phoneNumber) {
         Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + phoneNumber));
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
         startActivity(intent);
 
 

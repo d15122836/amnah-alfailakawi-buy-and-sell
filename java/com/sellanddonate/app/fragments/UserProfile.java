@@ -21,7 +21,7 @@ public class UserProfile extends BaseActivity {
     DatabaseReference mDatabase;
     public static String Uidd;
 
-    static int bike, house, apartment, mobile, car, electronics,total;
+    static int bike, house, apartment, mobile, car, electronics, total;
 
     @Override
     protected int getContentId() {
@@ -58,23 +58,17 @@ public class UserProfile extends BaseActivity {
                 if (dataSnapshot.exists()) {
                     for (DataSnapshot userDetails : dataSnapshot.getChildren()) {
                         Log.e("History", userDetails.getValue() + "");
-
-
                         catagory(userDetails.getValue(UserProfileDetail.class).getProductName());
                         total(userDetails.getValue(UserProfileDetail.class).getPrice());
-
-
                     }
-                   // total_tv.setText("Total Earned= "+total);
-
                 }
-                electronic_tv.setText("Electronic Sold: "+electronics);
-                bike_tv.setText("Bike Sold: "+bike);
-                car_tv.setText("Car Sold: "+car);
-                house_tv.setText("House Sold: "+house);
-                apartmnt_tv.setText("Apartment Sold: "+apartment);
-                mobile_tv.setText("Mobile Sold: "+mobile);
-                total_tv.setText(""+total);
+                electronic_tv.setText("Electronic Sold: " + electronics);
+                bike_tv.setText("Bike Sold: " + bike);
+                car_tv.setText("Car Sold: " + car);
+                house_tv.setText("House Sold: " + house);
+                apartmnt_tv.setText("Apartment Sold: " + apartment);
+                mobile_tv.setText("Mobile Sold: " + mobile);
+                total_tv.setText("" + total);
             }
 
             @Override
@@ -102,6 +96,6 @@ public class UserProfile extends BaseActivity {
     }
 
     public void total(int value) {
-        total+=value;
+        total += value;
     }
 }

@@ -47,7 +47,7 @@ public class SettingFragment extends BaseFragment  implements View.OnClickListen
 
     @Override
     protected void init(View view) {
-
+        getActivity().setTitle("Settings");
 
         titleTV = (TextView) findViewById(R.id.titleTV_id);
         titleTV_email = (TextView) findViewById(R.id.titleTV_email);
@@ -82,6 +82,11 @@ public class SettingFragment extends BaseFragment  implements View.OnClickListen
                 titleTV.setText("User Name:"+name);
                String email = dataSnapshot.child("email").getValue(String.class);
                 titleTV_email.setText("email:"+email);
+
+
+
+
+
             }
             @Override
             public void onCancelled(DatabaseError error) {

@@ -30,7 +30,7 @@ public class SellFragment extends BaseFragment implements View.OnClickListener {
 
     @Override
     protected void init(View view) {
-
+        getActivity().setTitle("Post your Ads ");
         mobileBtn = (RelativeLayout) findViewById(R.id.mobileSell_id);
         houseBtn = (RelativeLayout) findViewById(R.id.houseSell_id);
         bikeBtn = (RelativeLayout) findViewById(R.id.bikeSell_id);
